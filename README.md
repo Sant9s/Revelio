@@ -16,7 +16,7 @@ Abrí `project.godot` con Godot 4.7 y presioná **F5**.
 | Esc | Soltar el cursor |
 | Clic izquierdo | Volver al juego |
 
-La escena principal está en `demo_3d/casa_abandonada.tscn`. El refugio anterior sigue disponible en `demo_3d/refugio.tscn`.
+La escena principal está en `demo_3d/casa_abandonada.tscn`.
 
 Las seis ventanas están tapadas por completo. Julián espera junto al portón de entrada/salida, detrás de la posición inicial del jugador. Acercate y apuntale con E para conversar. Primero leés a Julián y apretás E o Enter para ver tus respuestas. Elegí con clic o flechas y Enter. El menú principal termina con «Chau, nos vemos» para salir; dentro de cada tema, «Quiero hablar de otra cosa» vuelve directamente al menú principal. Esc también termina la conversación. El movimiento y la cámara quedan bloqueados mientras hablás.
 
