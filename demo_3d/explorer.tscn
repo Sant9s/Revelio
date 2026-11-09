@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://demo_3d/first_person.gd" id="1_player"]
+[ext_resource type="PackedScene" path="res://demo_3d/survivor.tscn" id="4_survivor"]
+
+[sub_resource type="CapsuleShape3D" id="PlayerCapsule"]
+radius = 0.30
+height = 1.72
+
+[sub_resource type="SphereShape3D" id="CameraProbe"]
+radius = 0.23
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_player")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.86, 0)
+shape = SubResource("PlayerCapsule")
+
+[node name="Survivor" parent="." instance=ExtResource("4_survivor")]
+
+[node name="LookPivot" type="Node3D" parent="."]
+position = Vector3(0, 1.68, 0)
+
+[node name="FirstPerson" type="Camera3D" parent="LookPivot"]
+current = true
+fov = 70.0
+near = 0.06
+
+[node name="InteractionRay" type="RayCast3D" parent="LookPivot"]
+target_position = Vector3(0, 0, -2.8)
+
+[node name="CameraArm" type="SpringArm3D" parent="LookPivot"]
+shape = SubResource("CameraProbe")
+spring_length = 3.4
+margin = 0.06
+
+[node name="ThirdPerson" type="Camera3D" parent="LookPivot/CameraArm"]
+position = Vector3(0, 0, 3.4)
+fov = 70.0
+near = 0.06

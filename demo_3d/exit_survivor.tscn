@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://demo_3d/survivor.tscn" id="model"]
+[ext_resource type="Script" path="res://demo_3d/exit_survivor.gd" id="script"]
+
+[sub_resource type="CapsuleShape3D" id="body"]
+radius = 0.32
+height = 1.82
+
+[node name="ExitSurvivor" type="StaticBody3D"]
+script = ExtResource("script")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.91, 0)
+shape = SubResource("body")
+
+[node name="Survivor" parent="." instance=ExtResource("model")]
